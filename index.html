@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Supportti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2em;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .services {
+            margin-bottom: 40px;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 2em;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service-item {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        .service-item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover img {
+            transform: scale(1.1);
+        }
+        .service-item h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .service-item p {
+            color: #666;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .whatsapp {
+            background-color: #25D366;
+        }
+        .instagram {
+            background-color: #E4405F;
+        }
+        .google-review {
+            background-color: #4285F4;
+        }
+        .phone {
+            background-color: #34b7f1;
+        }
+        .consulta-os {
+            background-color: #FF5722;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            .social-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+            <h1</h1>
+    </header>
+
+    <div class="container">
+        <!-- Seção de Serviços -->
+        <section class="services">
+			<h1 align="center"><img src="images/pic00.png" alt="logo" width="60%"></h1>
+            <h2>Assistência técnica especializada para você e sua empresa</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="https://img.icons8.com/color/96/000000/technical-support.png" alt="Atendimento">
+                    <h3>Atendimento ao Cliente</h3>
+                    <p>Atendimento avulso ou contratual com foco na solução rápida e eficaz de problemas.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://img.icons8.com/color/96/000000/customer-support.png" alt="Atendimento Técnico">
+                    <h3>Atendimento Técnico</h3>
+                    <p>Assistência técnica imediata ou com agendamento, conforme sua necessidade.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://img.icons8.com/color/96/000000/network.png" alt="Manutenção de Redes">
+                    <h3>Manutenção de Redes</h3>
+                    <p>Planejamento e manutenção de redes de computadores, garantindo performance e segurança.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://img.icons8.com/color/96/000000/maintenance.png" alt="Manutenção Preventiva">
+                    <h3>Manutenção de Equipamentos</h3>
+                    <p>Manutenção preventiva e reparos especializados para seus equipamentos.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://img.icons8.com/color/96/000000/server.png" alt="Gerenciamento de Servidores">
+                    <h3>Gerenciamento de Servidores</h3>
+                    <p>Gestão eficiente de servidores, com foco em performance e segurança.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://img.icons8.com/color/96/000000/wifi.png" alt="Redes Wireless">
+                    <h3>Soluções em Redes Wireless</h3>
+                    <p>Configuração e otimização de redes sem fio para ambientes residenciais e empresariais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato e Redes Sociais -->
+        <section class="contact">
+            <h2>Entre em Contato</h2>
+            <h2 align="center">&nbsp;</h2>
+                <div class="social-links">
+                <!-- Link do WhatsApp -->
+                <a class="whatsapp" href="https://wa.me/557536323105" target="_blank">Fale pelo WhatsApp</a>
+                <!-- Link do Instagram -->
+                <a class="instagram" href="https://www.instagram.com//supporttionline/" target="_blank">Siga no Instagram</a>
+                <!-- Link Avaliação no Google -->
+                <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review" target="_blank">Avalie-nos no Google</a>
+                <!-- Link para Telefone -->
+                <a class="phone" href="tel:+557536323105">Ligue para Nós</a>
+                <!-- Link de Consulta de OS -->
+                <a class="consulta-os" href="https://shoficina.com.br/osweb/home" target="_blank">Consultar OS</a>
+            </div>
+        </section>
+
+        <!-- Seção do Google Maps -->
+        <section class="map">
+            <h2 align="center">&nbsp;</h2>
+            <h2 align="center">Nosso Endereço </h2>
+            <!-- Código do Google Maps -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>SUPPORTTI Tecnologia e Informação Ltda – CNPJ 18.869.079/0001-57 © 2013-2024 Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
