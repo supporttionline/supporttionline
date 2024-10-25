@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SUPPORTTI Tecnologia e Informação</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Todo o CSS permanece o mesmo */
+        /* Estilos do site omitidos aqui para manter o foco na adição do IP */
+    </style>
+</head>
+<body>
+
+    <!-- Conteúdo principal omitido para foco na mudança do footer -->
+
+    <footer>
+        <p>SUPPORTTI Tecnologia e Informação Ltda – CNPJ 18.869.079/0001-57 © 2013-2024 Todos os direitos reservados.</p>
+        <p>Seu IP público é: <span id="ip-visitor">Carregando...</span></p>
+    </footer>
+
+    <script>
+        // Script para obter o IP do visitante
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-visitor').textContent = data.ip;
+            })
+            .catch(error => {
+                document.getElementById('ip-visitor').textContent = "Erro ao obter o IP";
+            });
+    </script>
+
+</body>
+</html>
