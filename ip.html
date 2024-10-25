@@ -10,8 +10,8 @@
     <p>Seu endereço IP é: <span id="ip-address">Carregando...</span></p>
 
     <script>
-        // Usando uma API pública para obter o IP do cliente
-        fetch('https://api64.ipify.org?format=json')
+        // Usando a API pública para obter o IP do cliente
+        fetch('https://api.myip.com')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('ip-address').textContent = data.ip;
