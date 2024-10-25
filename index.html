@@ -207,8 +207,19 @@
     </div>
 
     <footer>
-        <p>SUPPORTTI Tecnologia e Informação Ltda – CNPJ 18.869.079/0001-57 © 2013-2024 Todos os direitos reservados.</p>
+        <p>SUPPORTTI Tecnologia e Informação Ltda – CNPJ 18.869.079/0001-57 © 2013-2024 Seu endereço IP é: <span id="ip-address">Carregando...</span>.</p>
     </footer>
-
+	    <script>
+        // Usando a API pública httpbin para obter o IP do cliente
+        fetch('https://httpbin.org/ip')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.origin;
+            })
+            .catch(error => {
+                document.getElementById('ip-address').textContent = "Erro ao obter o IP";
+                console.error("Erro ao obter IP:", error);
+            });
+    </script>
 </body>
 </html>
