@@ -3,240 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICMS </title>
+    <title>ICMS</title>
     <style>
-        /* Estilos Gerais */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
-
         body {
-            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             padding: 20px;
-            font-size: 16px; /* Fonte base */
         }
-
         .container {
-            max-width: 100%;
-            width: 90%;
-            margin: 20px auto;
-            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #e7f3fe; /* Azul claro */
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        /* Títulos */
-        .container h1, .container h2 {
+        h1 {
             text-align: center;
-            background: #007bff;
             color: white;
-            padding: 15px;
-            margin: -20px -20px 20px -20px;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            font-size: 14px;
+            background-color: #007bff; /* Azul escuro */
+            padding: 10px;
+            border-radius: 5px;
         }
-
-        /* Campos de Entrada */
         label {
-            font-weight: bold;
-            margin-top: 10px;
             display: block;
-            font-size: 16px;
+            margin-top: 10px;
+            color: #555;
         }
-
         input[type="number"], input[type="text"] {
             width: 100%;
-            padding: 12px;
+            padding: 8px;
             margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: 0.3s;
-            outline: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
-
-        input:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
-        }
-
-        /* Botões */
         button {
-            background: #007bff;
+            background-color: #4CAF50;
             color: white;
-            padding: 14px;
+            padding: 10px;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            font-size: 16px;
-            transition: 0.3s;
-            margin-top: 15px;
+            margin-top: 20px;
         }
-
         button:hover {
-            background: #0056b3;
+            background-color: #45a049;
         }
-
-        /* Resultados */
         .result {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 18px;
             color: #333;
             text-align: center;
-            padding: 12px;
-            background: #f9f9f9;
-            border-radius: 6px;
-            border: 1px solid #ddd;
         }
 
-        /* Tabela Responsiva */
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background: white;
-            font-size: 16px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .green {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .green:hover {
-            background-color: #218838;
-        }
-
-        /* Responsividade */
+        /* Media Queries para Responsividade */
         @media (max-width: 768px) {
-            body {
-                font-size: 14px;
-            }
-
             .container {
-                width: 95%;
                 padding: 15px;
+                max-width: 90%;
             }
-
-            h1, h2 {
-                font-size: 18px;
-                padding: 12px;
-            }
-
-            input {
-                padding: 10px;
-                font-size: 14px;
-            }
-
-            button {
-                font-size: 14px;
-                padding: 12px;
-            }
-
-            table {
-                font-size: 14px;
-            }
-
-            th, td {
+            h1 {
+                font-size: 1.5rem;
                 padding: 8px;
+            }
+            button {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+                padding: 6px;
+            }
+            .container {
+                padding: 10px;
+                max-width: 100%;
+            }
+            input[type="number"], input[type="text"], button {
+                padding: 10px;
+            }
+            .result {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Seção 1: Cálculo ICMS e IPI -->
     <div class="container">
-        <h1>PÁGINA PARA O CÁLCULO ICMS DE MERCADORIA COM NOTA</h1>
+        <h1>PÁGINA PARA O CÁLCULO ICMS DE MERCADORIA</h1>
+        
+        <label for="valorNota">Valor total da nota fiscal (R$):</label>
+        <input type="number" id="valorNota" placeholder="Digite o valor da mercadoria" value="0" required>
 
-        <label for="valorNota">Valor Total da Nota Fiscal (R$):</label>
-        <input type="number" id="valorNota" value="0">
+        <label for="icmsAliquota">Alíquota de ICMS (%):</label>
+        <input type="number" id="icmsAliquota" value="20.5" required>
 
-        <label for="icmsAliquota">Alíquota de ICMS do Seu Estado (%):</label>
-        <input type="number" id="icmsAliquota" value="20.5">
+        <label for="icmsPago">Valor de ICMS pago pela empresa emitente (R$):</label>
+        <input type="number" id="icmsPago" placeholder="Digite o valor de ICMS pago pela empresa emitente" value="0" required>
 
-        <label for="icmsPago">Valor de ICMS Pago pela Empresa Emitente (R$):</label>
-        <input type="number" id="icmsPago" value="0">
+        <label for="percentualComercio">Percentual do Comércio (20%):</label>
+        <input type="number" id="percentualComercio" value="20" required>
 
-        <label for="percentualComercio">Percentual do Comércio 20% e Indústria 60%:</label>
-        <input type="number" id="percentualComercio" value="20">
+        <!-- Novo campo para o Valor do IPI -->
+        <label for="valorIPI">Valor do IPI na nota fiscal (R$):</label>
+        <input type="number" id="valorIPI" placeholder="Digite o valor do IPI" value="0" required>
 
-        <label for="ipi">Valor do IPI na Nota Fiscal (R$):</label>
-        <input type="number" id="ipi" value="0">
-
-        <button  class="green" onclick="calcularICMS()">CALCULAR IMPOSTO A SER PAGO</button>
+        <button onclick="calcularICMS()">CALCULA IMPOSTO A SER PAGO</button>
 
         <div id="resultado" class="result"></div>
     </div>
 
-    <!-- Seção 2: Rateio ICMS -->
-    <div class="container">
-        <h2>RATEIO DE CUSTO DO IMPOSTO ICMS PARA PRECIFICAÇÃO DO PRODUTO</h2>
-        
-        <label>Valor Total (ICMS + IPI) (R$):</label>
-        <input type="number" id="freteTotal" value="0">
-
-        <label>Taxa da Nota Fiscal e Maquineta de Cartão (%):</label>
-        <input type="number" id="taxaVenda" value="6.46" step="0.01">
-
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Valor Total (R$)</th>
-                        <th>Valor de Venda (R$)</th>
-                        <th>Imposto Unidade (R$)</th>
-                        <th>Preço Custo Unidade (R$)</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaProdutos"></tbody>
-            </table>
-        </div>
-
-        <button class="green" onclick="adicionarProduto()">ADICIONAR PRODUTO</button>
-        <button class="green" onclick="calcularFrete()">EFETUAR O RATEIO DO IMPOSTO</button>
-    </div>
-
     <script>
         function calcularICMS() {
+            // Obter os valores inseridos pelos usuários
             const valorNota = parseFloat(document.getElementById('valorNota').value);
             const aliquotaICMS = parseFloat(document.getElementById('icmsAliquota').value);
             const icmsPago = parseFloat(document.getElementById('icmsPago').value);
             const percentualComercio = parseFloat(document.getElementById('percentualComercio').value);
-            const ipi = parseFloat(document.getElementById('ipi').value);
+            const valorIPI = parseFloat(document.getElementById('valorIPI').value);
 
+            // Verificar se os valores são válidos
+            if (isNaN(valorNota) || valorNota <= 0) {
+                alert("Por favor, insira um valor válido para a mercadoria.");
+                return;
+            }
+            if (isNaN(aliquotaICMS) || aliquotaICMS <= 0) {
+                alert("Por favor, insira uma alíquota válida de ICMS.");
+                return;
+            }
+            if (isNaN(icmsPago) || icmsPago < 0) {
+                alert("Por favor, insira um valor válido para o ICMS pago.");
+                return;
+            }
+            if (isNaN(percentualComercio) || percentualComercio <= 0) {
+                alert("Por favor, insira um percentual válido para o comércio.");
+                return;
+            }
+            if (isNaN(valorIPI) || valorIPI < 0) {
+                alert("Por favor, insira um valor válido para o IPI.");
+                return;
+            }
+
+            // Cálculo do ICMS de entrada
             const icmsCalculado = (valorNota * aliquotaICMS) / 100;
-            const icmsDevido = icmsCalculado - icmsPago;
-            const icmsComercio = icmsDevido - (icmsDevido * percentualComercio / 100);
-            const totalComIPI = icmsComercio + ipi;
 
-            document.getElementById('resultado').innerHTML = `
+            // Cálculo do ICMS devido após subtração do ICMS pago
+            const icmsDevido = icmsCalculado - icmsPago;
+
+            // Cálculo da dedução do percentual do comércio
+            const icmsComercio = icmsDevido - (icmsDevido * percentualComercio / 100);
+
+            // Somar o Valor do IPI ao ICMS Devido Após Dedução
+            const icmsComIPI = icmsComercio + valorIPI;
+
+            // Exibir o resultado
+            document.getElementById('resultado').innerHTML = ` 
                 <p><strong>ICMS Calculado:</strong> R$ ${icmsCalculado.toFixed(2)}</p>
-                <p><strong>ICMS Devido Após Dedução:</strong> R$ ${icmsComercio.toFixed(2)}</p>
-                <p><strong>Total (ICMS + IPI):</strong> R$ ${totalComIPI.toFixed(2)}</p>
+                <p><strong> ICMS Devido Após Dedução:</strong> R$ ${icmsComercio.toFixed(2)}</p>
+                <p><strong>Total (ICMS + IPI):</strong> R$ ${icmsComIPI.toFixed(2)}</p>
             `;
         }
     </script>
