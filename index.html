@@ -1,237 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SupportTI</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-        }
-        header h1 {
-            font-size: 2em;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        .services {
-            margin-bottom: 40px;
-        }
-        .services h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 2em;
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .service-item {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-        }
-        .service-item:hover {
-            transform: translateY(-10px);
-        }
-        .service-item img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-        .service-item:hover img {
-            transform: scale(1.1);
-        }
-        .service-item h3 {
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .service-item p {
-            color: #666;
-        }
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .whatsapp {
-            background-color: #25D366;
-        }
-        .instagram {
-            background-color: #E4405F;
-        }
-        .google-review {
-            background-color: #4285F4;
-        }
-        .phone {
-            background-color: #34b7f1;
-        }
-        .consulta-os {
-            background-color: #FF5722;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
-        }
-        .map iframe {
-            width: 100%;
-            height: 300px;
-            border: 0;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5em;
-            }
-            .social-links a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SupportTI</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 40px 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    .services h2, .contact h2, .map h2, .reviews-title {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0077b6;
+      font-size: 2em;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .service-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .service-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .service-item img {
+      width: 70px;
+      margin-bottom: 15px;
+    }
+    .service-item h3 {
+      font-size: 1.3em;
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+    .service-item p {
+      color: #555;
+      font-size: 0.95em;
+    }
+    .contact {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .social-links a {
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+    .whatsapp { background-color: #25D366; }
+    .instagram { background-color: #E4405F; }
+    .google-review { background-color: #4285F4; padding: 14px 40px; } /* mais espaçamento */
+    .phone { background-color: #34b7f1; }
+    .consulta-os { background-color: #FF5722; }
+    .map iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #0077b6;
+      color: white;
+      font-size: 0.9em;
+    }
+    @media (max-width: 768px) {
+      .social-links {
+        flex-direction: column;
+      }
+      .google-review { padding: 14px 24px; } /* ajuste mobile */
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-            <h1</h1>
-    </header>
+  <header>
+    <h1 align="center"><img src="images/pic00.png" alt="logo" width="45%"></h1>
+  </header>
 
-    <div class="container">
-        <!-- Seção de Serviços -->
-        <section class="services">
-			<h1 align="center"><img src="images/pic00.png" alt="logo" width="60%"></h1>
-                        <h2 align="center"><img src="images/assis.png" alt="logo" width="100%"></h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <img src="images/technical-support.png" alt="Atendimento">
-                    <h3>Atendimento ao Cliente</h3>
-                    <p>Serviço avulso ou contratual com resolução rápida e eficaz de problemas.</p>
-                </div>
-                <div class="service-item">
-                    <img src="images/customer-support.png" alt="Atendimento Técnico">
-                    <h3>Atendimento Técnico</h3>
-                    <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
-                </div>
-                <div class="service-item">
-                    <img src="images/network.png" alt="Manutenção de Redes">
-                    <h3>Manutenção de Redes</h3>
-                    <p>Planejamento de redes de computadores, garantindo performance e segurança.</p>
-                </div>
-                <div class="service-item">
-                    <img src="images/maintenance.png" alt="Manutenção Preventiva">
-                    <h3>Manutenção de Equipamentos</h3>
-                    <p>Reparos especializados para notebook computador e servidor.</p>
-                </div>
-                <div class="service-item">
-                    <img src="images/server.png" alt="Gerenciamento de Servidores">
-                    <h3>Gerenciamento de Servidores</h3>
-                    <p>Gestão eficiente de servidores, com foco em performance e segurança do cliente.</p>
-                </div>
-                <div class="service-item">
-                    <img src="images/wifi.png" alt="Redes Wireless">
-                    <h3>Soluções em Redes Wireless</h3>
-                    <p>Configuração e otimização de redes sem fio para ambientes residenciais e empresariais.</p>
-                </div>
-		<div class="service-item">
-   		    <img src="images/certificado-digital.png" alt="Certificado Digital">
-   	 	    <h3>Certificado Digital A1 e A3</h3>
-    		    <p>Emissão para pessoa física e jurídica, com segurança e agilidade.</p>
-		</div>
-            </div>
-        </section>
+  <div class="container">
+    <!-- Logo -->
+    <!-- Serviços -->
+    <section class="services">
+      <h2>Nossos Serviços</h2>
+      <div class="service-grid">
+        <div class="service-item">
+          <img src="images/technical-support.png" alt="Atendimento">
+          <h3>Atendimento ao Cliente</h3>
+          <p>Serviço avulso ou contratual com resolução rápida e eficaz de problemas.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/customer-support.png" alt="Atendimento Técnico">
+          <h3>Suporte Técnico</h3>
+          <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/network.png" alt="Manutenção de Redes">
+          <h3>Manutenção de Redes</h3>
+          <p>Planejamento de redes de computadores, garantindo performance e segurança.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/maintenance.png" alt="Equipamentos">
+          <h3>Manutenção de Equipamentos</h3>
+          <p>Reparos especializados para notebook, computador e servidor.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/server.png" alt="Servidores">
+          <h3>Gerenciamento de Servidores</h3>
+          <p>Gestão eficiente de servidores, com foco em performance e segurança do cliente.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/wifi.png" alt="Wireless">
+          <h3>Soluções em Redes Wireless</h3>
+          <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/certificado-digital.png" alt="Certificado Digital">
+          <h3>Certificado Digital A1 e A3</h3>
+          <p>Emissão para pessoa física e jurídica, com segurança e agilidade.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Seção de Contato e Redes Sociais -->
-        <section class="contact">
-            <h2>Entre em Contato</h2>
-            <h2 align="center">&nbsp;</h2>
-                <div class="social-links">
-                <!-- Link do WhatsApp -->
-                <a class="whatsapp" href="https://wa.me/557536323105" target="_blank">Fale pelo WhatsApp</a>
-                <!-- Link do Instagram -->
-                <a class="instagram" href="https://www.instagram.com//supporttionline/" target="_blank">Siga no Instagram</a>
-                <!-- Link Avaliação no Google -->
-                <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review" target="_blank">Avalie-nos no Google</a>
-                <!-- Link para Telefone -->
-                <a class="phone" href="tel:+557536323105">Ligue para Nós</a>
-                <!-- Link de Consulta de OS -->
-                <a class="consulta-os" href="https://shoficina.com.br/osweb/home" target="_blank">Consultar OS</a>
-            </div>
-        </section>
+    <!-- Contato -->
+    <section class="contact">
+      <h2>Entre em Contato</h2>
+      <div class="social-links">
+        <a class="whatsapp" href="https://wa.me/557536323105" target="_blank">WhatsApp</a>
+        <a class="instagram" href="https://www.instagram.com/supporttionline/" target="_blank">Instagram</a>
+        <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review" target="_blank">Avalie no Google</a>
+        <a class="phone" href="tel:+557536323105">Ligue Agora</a>
+        <a class="consulta-os" href="https://shoficina.com.br/osweb/home" target="_blank">Consultar OS</a>
+      </div>
+    </section>
 
-        <!-- Seção do Google Maps -->
-        <section class="map">
-            <h2 align="center">&nbsp;</h2>
-            <h2 align="center">Nossa Localização </h2>
-            <!-- Código do Google Maps -->
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-        </section>
-    </div>
-	<!-- Depoimento Google Clientes -->
-	 <h2 align="center">&nbsp;</h2>
-            <h2 align="center">Avaliação da Empresa</h2>
-	 <h2 align="center">&nbsp;</h2>
-	<!-- Código do widget da Elfsight -->
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-	<div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01" data-elfsight-app-lazy></div>
-	
-    <footer>
-        <p>Todos os direitos reservados. SupportTI Tecnologia </p>
-        <p> Seu ip <span id="ip-address">Carregando...</span></p>
-    </footer>
-	    <script>
-        // Usando a API pública httpbin para obter o IP do cliente
-        fetch('https://httpbin.org/ip')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('ip-address').textContent = data.origin;
-            })
-            .catch(error => {
-                document.getElementById('ip-address').textContent = "Erro ao obter o IP";
-                console.error("Erro ao obter IP:", error);
-            });
-    </script>
+    <!-- Mapa -->
+    <section class="map">
+	  <h2></h2>
+      <h2>Nossa Localização</h2>
+	        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </div>
+
+  <!-- Avaliações -->
+  <h2 class="reviews-title">Avaliações dos Clientes</h2>
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01" data-elfsight-app-lazy></div>
+
+  <footer>
+    <p>Todos os direitos reservados.</p>
+    <p>Seu IP: <span id="ip-address">Carregando...</span></p>
+  </footer>
+
+  <script>
+    fetch('https://httpbin.org/ip')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip-address').textContent = data.origin;
+      })
+      .catch(error => {
+        document.getElementById('ip-address').textContent = "Erro ao obter IP";
+      });
+  </script>
 </body>
 </html>
