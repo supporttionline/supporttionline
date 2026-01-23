@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SupportTI  | Suporte de informática em Santo Antônio de Jesus - BA</title>
-
+  <title>SupportTI</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -53,6 +52,10 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95em;
+    }
+
+    .navbar a:hover {
+      opacity: 0.8;
     }
 
     .menu-toggle {
@@ -112,7 +115,6 @@
       font-size: 2em;
     }
 
-    /* SERVIÇOS */
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -171,15 +173,20 @@
       transition: 0.3s;
     }
 
+    .social-links a:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+
     .whatsapp { background-color: #25D366; }
     .instagram { background-color: #E4405F; }
     .google-review { background-color: #4285F4; padding: 14px 40px; }
     .phone { background-color: #34b7f1; }
     .consulta-os { background-color: #FF5722; }
 
-    /* ESPAÇO EXTRA PARA O MAPA */
+    /* ESPAÇAMENTO EXTRA PARA LOCALIZAÇÃO */
     .map {
-      margin-top: 70px;
+      margin-top: 80px;
     }
 
     .map iframe {
@@ -203,106 +210,121 @@
 
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <ul id="menu">
-      <li><a href="#servicos">Nossos Serviços</a></li>
-      <li><a href="#contato">Entre em Contato</a></li>
-      <li><a href="#localizacao">Nossa Localização</a></li>
-      <li><a href="#avaliacoes">Avaliações</a></li>
-    </ul>
+  <!-- MENU -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+      <ul id="menu">
+        <li><a href="#servicos">Nossos Serviços</a></li>
+        <li><a href="#contato">Entre em Contato</a></li>
+        <li><a href="#localizacao">Nossa Localização</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="consulta-os/">Consulta OS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <img src="images/pic00.png" alt="logo" width="30%">
+  </header>
+
+  <div class="container">
+
+    <!-- SERVIÇOS -->
+    <section class="services" id="servicos">
+      <h2>Nossos Serviços</h2>
+      <div class="service-grid">
+
+        <div class="service-item">
+          <img src="images/technical-support.png">
+          <h3>Atendimento ao Cliente</h3>
+          <p>Serviço avulso ou contratual com resolução rápida e eficaz de problemas.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="images/customer-support.png">
+          <h3>Suporte Técnico</h3>
+          <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="images/network.png">
+          <h3>Manutenção de Redes</h3>
+          <p>Planejamento de redes de computadores, garantindo performance e segurança.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="images/maintenance.png">
+          <h3>Manutenção de Equipamentos</h3>
+          <p>Reparos especializados para notebook, computador e servidor.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="images/server.png">
+          <h3>Gerenciamento de Servidores</h3>
+          <p>Gestão eficiente de servidores, com foco em performance e segurança.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="images/wifi.png">
+          <h3>Soluções em Redes Wireless</h3>
+          <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="images/certificado-digital.png">
+          <h3>Certificado Digital A1 e A3</h3>
+          <p>Emissão para pessoa física e jurídica, com segurança e agilidade.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact" id="contato">
+      <h2>Entre em Contato</h2>
+      <div class="social-links">
+        <a class="whatsapp" href="https://wa.me/557536323105">WhatsApp</a>
+        <a class="instagram" href="https://www.instagram.com/supporttionline/">Instagram</a>
+        <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review">Avalie no Google</a>
+        <a class="phone" href="tel:+557536323105">Ligue Agora</a>
+        <a class="consulta-os" href="consulta-os/">Consultar OS</a>
+      </div>
+    </section>
+
+    <!-- MAPA (FUNCIONANDO) -->
+    <section class="map" id="localizacao">
+      <h2>Nossa Localização</h2>
+      <iframe
+        src="https://www.google.com/maps?q=SupportTI%20Tecnologia%20e%20Informação&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
   </div>
-</nav>
 
-<header>
-  <img src="images/pic00.png" alt="logo" width="30%">
-</header>
+  <!-- AVALIAÇÕES -->
+  <h2 class="reviews-title" id="avaliacoes">Avaliações dos Clientes</h2>
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
 
-<div class="container">
+  <footer>
+    <p>© 2026 SupportTI Tecnologia e Informação – Todos os direitos reservados</p>
+    <p>Seu IP: <span id="ip-address">Carregando...</span></p>
+  </footer>
 
-<section class="services" id="servicos">
-  <h2>Nossos Serviços</h2>
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
 
-  <div class="service-grid">
-
-    <div class="service-item">
-      <img src="images/technical-support.png">
-      <h3>Atendimento ao Cliente</h3>
-      <p>Serviço avulso ou contratual com resolução rápida e eficaz de problemas.</p>
-    </div>
-
-    <div class="service-item">
-      <img src="images/customer-support.png">
-      <h3>Suporte Técnico</h3>
-      <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
-    </div>
-
-    <div class="service-item">
-      <img src="images/network.png">
-      <h3>Manutenção de Redes</h3>
-      <p>Planejamento de redes de computadores, garantindo performance e segurança.</p>
-    </div>
-
-    <div class="service-item">
-      <img src="images/maintenance.png">
-      <h3>Manutenção de Equipamentos</h3>
-      <p>Reparos especializados para notebook, computador e servidor.</p>
-    </div>
-
-    <div class="service-item">
-      <img src="images/server.png">
-      <h3>Gerenciamento de Servidores</h3>
-      <p>Gestão eficiente de servidores, com foco em performance e segurança do cliente.</p>
-    </div>
-
-    <div class="service-item">
-      <img src="images/wifi.png">
-      <h3>Soluções em Redes Wireless</h3>
-      <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
-    </div>
-
-    <div class="service-item">
-      <img src="images/certificado-digital.png">
-      <h3>Certificado Digital A1 e A3</h3>
-      <p>Emissão para pessoa física e jurídica, com segurança e agilidade.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact" id="contato">
-  <h2>Entre em Contato</h2>
-  <div class="social-links">
-    <a class="whatsapp" href="https://wa.me/557536323105">WhatsApp</a>
-    <a class="instagram" href="https://www.instagram.com/supporttionline/">Instagram</a>
-    <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review">Avalie no Google</a>
-    <a class="phone" href="tel:+557536323105">Ligue Agora</a>
-    <a class="consulta-os" href="https://shoficina.com.br/osweb/home">Consultar OS</a>
-  </div>
-</section>
-
-<section class="map" id="localizacao">
-  <h2>Nossa Localização</h2>
-  <iframe src="https://www.google.com/maps?q=SUPPORTTI%20Tecnologia%20e%20Informação&output=embed" loading="lazy"></iframe>
-</section>
-
-</div>
-
-<h2 class="reviews-title" id="avaliacoes">Avaliações dos Clientes</h2>
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
-
-<footer>
-  <p>© 2026 SupportTI Tecnologia e Informação – Todos os direitos reservados</p>
-</footer>
-
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-  }
-</script>
+    fetch('https://httpbin.org/ip')
+      .then(r => r.json())
+      .then(d => document.getElementById('ip-address').textContent = d.origin)
+      .catch(() => document.getElementById('ip-address').textContent = 'Erro');
+  </script>
 
 </body>
 </html>
-
