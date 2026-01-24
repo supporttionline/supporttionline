@@ -186,7 +186,7 @@
 
     /* ESPAÇAMENTO EXTRA PARA LOCALIZAÇÃO */
     .map {
-      margin-top: 40px;
+      margin-top: 80px;
     }
 
     .map iframe {
@@ -205,6 +205,85 @@
       color: white;
       font-size: 0.9em;
     }
+
+/* CLIENTES E PARCEIROS */
+.clients {
+  margin-top: 40px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 25px;
+  align-items: center;
+}
+
+.client-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.client-item:hover {
+  transform: translateY(-5px);
+}
+
+.client-item img {
+  max-width: 120px;
+  max-height: 70px;
+  object-fit: contain;
+}
+/* CLIENTES - CARROSSEL */
+.clients {
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+.clients-carousel {
+  display: flex;
+  gap: 30px;
+  animation: scrollClients 30s linear infinite;
+}
+
+.client-item {
+  min-width: 160px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.client-item img {
+  max-width: 130px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: 0.4s;
+}
+
+.client-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* Pausa animação ao passar mouse */
+.clients:hover .clients-carousel {
+  animation-play-state: paused;
+}
+
+/* Animação do carrossel */
+@keyframes scrollClients {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
   </style>
 </head>
 
@@ -299,6 +378,7 @@
 	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
+
   </div>
 
   <!-- AVALIAÇÕES -->
@@ -306,6 +386,45 @@
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
 
+<!-- CLIENTES E PARCEIROS -->
+<section class="clients" id="clientes">
+  <h2 class="reviews-title">Algumas empresas que confiam em nosso trabalho</h2>
+
+  <div class="clients-carousel">
+
+    <!--<div class="client-item"><img src="images/clientes/audiconjur.png"></div>-->
+    <div class="client-item"><img src="images/clientes/cardoso-vita.png"></div>
+    <div class="client-item"><img src="images/clientes/churrascaria-pena-branca.png"></div>
+    <div class="client-item"><img src="images/clientes/crie-borde.png"></div>
+    <div class="client-item"><img src="images/clientes/hotel-pena-branca.png"></div>
+    <div class="client-item"><img src="images/clientes/clinica-idefi.png"></div>
+    <div class="client-item"><img src="images/clientes/fabio-braga.png"></div>
+    <div class="client-item"><img src="images/clientes/facemp.png"></div>
+    <!--<div class="client-item"><img src="images/clientes/fbgames.png"></div> -->
+    <div class="client-item"><img src="images/clientes/fbnet.png"></div>
+    <div class="client-item"><img src="images/clientes/frigosaj.png"></div>
+    <div class="client-item"><img src="images/clientes/mr-contabilidade.png"></div>
+    <div class="client-item"><img src="images/clientes/prime-promotora.png"></div>
+    <div class="client-item"><img src="images/clientes/rogerio-auto-center.png"></div>
+
+    <!-- DUPLICADO para loop infinito -->
+    <div class="client-item"><img src="images/clientes/audiconjur.png"></div>
+    <div class="client-item"><img src="images/clientes/cardoso-vita.png"></div>
+    <div class="client-item"><img src="images/clientes/churrascaria-pena-branca.png"></div>
+    <div class="client-item"><img src="images/clientes/crie-borde.png"></div>
+    <div class="client-item"><img src="images/clientes/hotel-pena-branca.png"></div>
+    <div class="client-item"><img src="images/clientes/clinica-idefi.png"></div>
+    <div class="client-item"><img src="images/clientes/fabio-braga.png"></div>
+    <div class="client-item"><img src="images/clientes/facemp.png"></div>
+    <div class="client-item"><img src="images/clientes/fbgames.png"></div>
+    <div class="client-item"><img src="images/clientes/fbnet.png"></div>
+    <div class="client-item"><img src="images/clientes/frigosaj.png"></div>
+    <div class="client-item"><img src="images/clientes/mr-contabilidade.png"></div>
+    <div class="client-item"><img src="images/clientes/prime-promotora.png"></div>
+    <div class="client-item"><img src="images/clientes/rogerio-auto-center.png"></div>
+
+  </div>
+</section>
   <footer>
     <p>© 2026 SupportTI Tecnologia e Informação – Todos os direitos reservados</p>
     <p>Seu IP: <span id="ip-address">Carregando...</span></p>
@@ -324,6 +443,3 @@
 
 </body>
 </html>
-
-
-
