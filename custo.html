@@ -1,212 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUSTO</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SupportTI - Custos de  Mercadoria</title>
 
-        /* Estilo para o título */
-        h2 {
-            text-align: center;
-            background-color: #007bff; /* Azul escuro */
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        /* Estilo para a caixa azul ao redor da parte do formulário e tabela */
-        .blue-box {
-            background-color: #e7f3fe; /* Azul claro */
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
+<style>
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+body{
+font-family:'Inter',sans-serif;
+background:#f4f6fb;
+margin:0;
+}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+font-size:22px;
+font-weight:600;
+text-align:center;
+}
 
-        th {
-            background-color: #f4f4f4;
-        }
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
 
-        input {
-            width: 100%;
-            padding: 5px;
-            text-align: center;
-            box-sizing: border-box; /* Garante que o padding não quebre o layout */
-        }
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+margin-bottom:20px;
+}
 
-        button {
-            margin-top: 10px;
-            padding: 10px;
-            cursor: pointer;
-            width: 100%; /* Tornando o botão maior em telas pequenas */
-        }
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
 
-        button.green {
-            background-color: #28a745; /* Verde */
-            color: white;
-            border: none;
-        }
+label{
+font-weight:600;
+font-size:14px;
+}
 
-        button.green:hover {
-            background-color: #218838; /* Verde mais escuro ao passar o mouse */
-        }
+input{
+width:100%;
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+margin-top:5px;
+}
 
-        /* Media query para telas pequenas */
-        @media (max-width: 768px) {
-            h2 {
-                font-size: 18px;
-                padding: 10px;
-            }
+button{
+padding:10px 15px;
+border:none;
+border-radius:6px;
+font-weight:600;
+cursor:pointer;
+}
 
-            .blue-box {
-                padding: 15px;
-            }
+.btn-add{background:#198754;color:white}
+.btn-export{background:#0d6efd;color:white}
+.btn-remove{background:#dc3545;color:white}
 
-            table, input, button {
-                font-size: 14px; /* Ajusta o tamanho da fonte */
-            }
+button:hover{opacity:0.9}
 
-            input {
-                width: 100%; /* Faz os inputs ocuparem a largura total */
-            }
 
-            button {
-                width: 100%; /* Torna os botões mais largos em telas pequenas */
-            }
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
 
-            th, td {
-                font-size: 12px;
-                padding: 6px;
-            }
-        }
+th,td{
+padding:8px;
+border-bottom:1px solid #eee;
+text-align:center;
+}
 
-        /* Media query para telas muito pequenas */
-        @media (max-width: 480px) {
-            h2 {
-                font-size: 16px;
-                padding: 8px;
-            }
+th{
+background:#f1f3f7;
+}
 
-            input {
-                font-size: 14px;
-            }
+.result{color:#0d6efd;font-weight:600}
+.lucro{color:#198754;font-weight:600}
 
-            button {
-                font-size: 14px;
-            }
-        }
-    </style>
+.dashboard{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.box{
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 5px 10px rgba(0,0,0,0.06);
+text-align:center;
+}
+
+.box h3{margin:5px 0}
+
+@media(max-width:900px){
+.grid{grid-template-columns:1fr}
+.dashboard{grid-template-columns:1fr 1fr}
+}
+
+</style>
 </head>
+
 <body>
 
-    <h2>DIVISÃO DE CUSTOS DA MERCADORIA</h2>
-    
-    <div class="blue-box">
-        <label>Valor de custo da mercadoria a ser dividido (R$):</label>
-        <input type="number" id="freteTotal" value="0">
+<header>
+SupportTI • Cálculo de Custos
+</header>
 
-        <label>Taxa da nota fiscal e cartão (%):</label>
-        <input type="number" id="taxaVenda" value="8.91 step="0.01">
+<div class="container">
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Valor Total das Peças por item (R$)</th>
-                    <th>Valor de Venda (R$)</th>
-                    <th>Imposto por Unidade (R$)</th>
-                    <th>Preço Custo por Unidade (R$)</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaProdutos">
-                <!-- Os campos dos produtos serão adicionados aqui -->
-            </tbody>
-        </table>
+<div class="dashboard">
 
-        <button class="green" onclick="adicionarProduto()">Adicionar Produto</button>
-        <button class="green" onclick="calcularFrete()">Calcular Divisão</button>
-    </div>
+<div class="box">
+Total Produtos
+<h3 id="totalProdutos">0</h3>
+</div>
 
-    <script>
-        let idProduto = 0;
+<div class="box">
+Custo Total
+<h3 id="custoTotal">R$0</h3>
+</div>
 
-        function adicionarProduto() {
-            let tabela = document.getElementById("tabelaProdutos");
+<div class="box">
+Venda Total
+<h3 id="vendaTotal">R$0</h3>
+</div>
 
-            let linha = document.createElement("tr");
-            linha.innerHTML = `
-                <td><input type="text" id="produto${idProduto}" placeholder="Nome do Produto"></td>
-                <td><input type="number" id="qtd${idProduto}" value="1"></td>
-                <td><input type="number" id="valorTotal${idProduto}" value="10"></td>
-                <td><input type="number" id="valorVenda${idProduto}" value="15"></td>
-                <td id="frete${idProduto}">-</td>
-                <td id="precoFinal${idProduto}">-</td>
-            `;
-            tabela.appendChild(linha);
-            idProduto++;
-        }
+<div class="box">
+Lucro Total
+<h3 id="lucroTotal">R$0</h3>
+</div>
 
-        function calcularFrete() {
-            let freteTotal = parseFloat(document.getElementById("freteTotal").value);
-            let taxaVenda = parseFloat(document.getElementById("taxaVenda").value) / 100;
-            
-            if (isNaN(freteTotal) || freteTotal <= 0) {
-                alert("Por favor, insira um valor válido para o frete.");
-                return;
-            }
+</div>
 
-            if (isNaN(taxaVenda) || taxaVenda < 0) {
-                alert("Por favor, insira uma taxa de venda válida.");
-                return;
-            }
+<div class="card grid">
 
-            let totalGeral = 0;
-            let valoresProdutos = [];
+<div>
+<label>Frete / custo adicional (R$)</label>
+<input type="number" id="frete" value="0" oninput="calcular()">
+</div>
 
-            for (let i = 0; i < idProduto; i++) {
-                let qtd = parseInt(document.getElementById(`qtd${i}`).value) || 0;
-                let valorTotal = parseFloat(document.getElementById(`valorTotal${i}`).value) || 0;
-                let precoUnitario = qtd > 0 ? valorTotal / qtd : 0;
-                let valorVenda = parseFloat(document.getElementById(`valorVenda${i}`).value) || 0;
-                
-                valoresProdutos.push({ id: i, qtd, valorTotal, precoUnitario, valorVenda });
-                totalGeral += valorTotal;
-            }
+<div>
+<label>Taxa NF + cartão (%)</label>
+<input type="number" id="taxa" value="8.91" step="0.01" oninput="calcular()">
+</div>
 
-            if (totalGeral === 0) {
-                alert("O valor total dos produtos não pode ser zero.");
-                return;
-            }
+</div>
 
-            valoresProdutos.forEach(({ id, qtd, valorTotal, precoUnitario, valorVenda }) => {
-                let freteProdutoTotal = (valorTotal / totalGeral) * freteTotal;
-                let fretePorUnidade = qtd > 0 ? freteProdutoTotal / qtd : 0;
-                let impostoUnidade = valorVenda * taxaVenda;
-                let precoFinal = precoUnitario + fretePorUnidade + impostoUnidade;
+<div class="card">
 
-                document.getElementById(`frete${id}`).innerText = "R$ " + fretePorUnidade.toFixed(2);
-                document.getElementById(`precoFinal${id}`).innerText = "R$ " + precoFinal.toFixed(2);
-            });
-        }
-    </script>
+<button class="btn-add" onclick="addProduto()">Adicionar Produto</button>
+<button class="btn-export" onclick="exportExcel()">Exportar Excel</button>
+
+<table>
+
+<thead>
+<tr>
+<th>Produto</th>
+<th>Qtd</th>
+<th>Total Peças</th>
+<th>Venda</th>
+<th>Imposto</th>
+<th>Custo Final</th>
+<th>Lucro</th>
+<th>Margem</th>
+<th>Remover</th>
+</tr>
+</thead>
+
+<tbody id="produtos"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+let id=0
+
+function addProduto(){
+
+let tabela=document.getElementById('produtos')
+
+let tr=document.createElement('tr')
+
+tr.innerHTML=`
+
+<td><input></td>
+<td><input type="number" id="q${id}" value="1" oninput="calcular()"></td>
+<td><input type="number" id="t${id}" value="10" oninput="calcular()"></td>
+<td><input type="number" id="v${id}" value="15" oninput="calcular()"></td>
+<td class="result" id="i${id}">-</td>
+<td class="result" id="c${id}">-</td>
+<td class="lucro" id="l${id}">-</td>
+<td id="m${id}">-</td>
+<td><button class="btn-remove" onclick="remover(this)">X</button></td>
+
+`
+
+tabela.appendChild(tr)
+
+id++
+
+calcular()
+
+}
+
+function remover(btn){
+btn.parentNode.parentNode.remove()
+calcular()
+}
+
+function calcular(){
+
+let frete=parseFloat(document.getElementById('frete').value)||0
+let taxa=(parseFloat(document.getElementById('taxa').value)||0)/100
+
+let totalCompra=0
+let vendaTotal=0
+let lucroTotal=0
+let count=0
+
+let dados=[]
+
+for(let i=0;i<id;i++){
+
+let q=document.getElementById('q'+i)
+let t=document.getElementById('t'+i)
+let v=document.getElementById('v'+i)
+
+if(!q)continue
+
+let qtd=parseFloat(q.value)||0
+let total=parseFloat(t.value)||0
+let venda=parseFloat(v.value)||0
+
+count++
+
+dados.push({i,qtd,total,venda})
+
+totalCompra+=total
+
+}
+
+for(let p of dados){
+
+let unit=p.qtd>0?p.total/p.qtd:0
+
+let freteProduto=totalCompra>0?(p.total/totalCompra)*frete:0
+
+let freteUnit=p.qtd>0?freteProduto/p.qtd:0
+
+let imposto=p.venda*taxa
+
+let custo=unit+freteUnit+imposto
+
+let lucro=p.venda-custo
+
+let margem=p.venda>0?(lucro/p.venda)*100:0
+
+vendaTotal+=p.venda*p.qtd
+lucroTotal+=lucro*p.qtd
+
+
+document.getElementById('i'+p.i).innerText='R$ '+imposto.toFixed(2)
+
+document.getElementById('c'+p.i).innerText='R$ '+custo.toFixed(2)
+
+document.getElementById('l'+p.i).innerText='R$ '+lucro.toFixed(2)
+
+document.getElementById('m'+p.i).innerText=margem.toFixed(1)+'%'
+
+}
+
+
+document.getElementById('totalProdutos').innerText=count
+
+document.getElementById('custoTotal').innerText='R$ '+totalCompra.toFixed(2)
+
+document.getElementById('vendaTotal').innerText='R$ '+vendaTotal.toFixed(2)
+
+document.getElementById('lucroTotal').innerText='R$ '+lucroTotal.toFixed(2)
+
+}
+
+function exportExcel(){
+
+let tabela=document.querySelector('table').outerHTML
+
+let url='data:application/vnd.ms-excel,'+encodeURIComponent(tabela)
+
+let a=document.createElement('a')
+
+a.href=url
+
+a.download='custos_supportti.xls'
+
+a.click()
+
+}
+
+addProduto()
+
+</script>
 
 </body>
 </html>
-
-
-
