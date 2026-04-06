@@ -3,449 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SupportTI  | Suporte de informática em Santo Antônio de Jesus - BA</title>
+  <title>SupportTI | Suporte de informática em Santo Antônio de Jesus - BA</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --primary: #0f172a; /* Azul Escuro Moderno */
+      --secondary: #0284c7; /* Azul Suporte */
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #334155;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f8fafc;
-      color: #333;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
 
     /* MENU */
     .navbar {
-      background: #0077b6;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .nav-container {
       max-width: 1200px;
       margin: auto;
-      padding: 10px 15px;
+      padding: 12px 20px;
       display: flex;
       justify-content: flex-end;
       align-items: center;
     }
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
+    .navbar ul { list-style: none; display: flex; gap: 20px; }
     .navbar a {
-      color: #fff;
+      color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.95em;
+      font-size: 0.9em;
+      transition: 0.3s;
     }
+    .navbar a:hover { color: var(--secondary); }
 
-    .navbar a:hover {
-      opacity: 0.8;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      color: #fff;
-      cursor: pointer;
-    }
+    .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
+      .menu-toggle { display: block; }
       .navbar ul {
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 100%;
-        background: #0077b6;
-        flex-direction: column;
-        display: none;
-        padding: 15px 0;
+        position: absolute; top: 60px; right: 0; width: 100%;
+        background: white; flex-direction: column; display: none;
+        padding: 20px; border-bottom: 1px solid #eee;
       }
-
-      .navbar ul.show {
-        display: flex;
-      }
-
-      .navbar ul li {
-        text-align: center;
-        padding: 10px 0;
-      }
+      .navbar ul.show { display: flex; }
+      .navbar ul li { text-align: center; }
     }
 
-    /* HEADER */
+    /* HEADER - FOCO NO LOGO */
     header {
       text-align: center;
-      background: linear-gradient(90deg, #0077b6, #00b4d8);
-      padding: 15px 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background: white;
+      padding: 50px 20px;
     }
+    header img { max-width: 280px; height: auto; }
 
-    .container {
-      max-width: 1200px;
-      margin: 10px auto;
-      padding: 20px;
-    }
+    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-    .services h2,
-    .contact h2,
-    .map h2,
-    .reviews-title {
+    h2.section-title {
       text-align: center;
-      margin-bottom: 25px;
-      color: #0077b6;
-      font-size: 2em;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-weight: 700;
     }
 
+    /* GRID DE SERVIÇOS */
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
     }
 
     .service-item {
-      background: #fff;
+      background: var(--card-bg);
       border-radius: 12px;
-      padding: 25px;
+      padding: 30px;
       text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #eef2f6;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
 
     .service-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: var(--secondary);
     }
 
-    .service-item img {
-      width: 70px;
-      margin-bottom: 15px;
-    }
+    .service-item img { width: 50px; height: 50px; margin-bottom: 20px; }
+    .service-item h3 { margin-bottom: 10px; color: var(--primary); font-size: 1.2rem; }
+    .service-item p { font-size: 0.95rem; color: #64748b; }
 
-    .service-item h3 {
-      font-size: 1.3em;
-      color: #0077b6;
-      margin-bottom: 10px;
-    }
-
-    .service-item p {
-      color: #555;
-      font-size: 0.95em;
-    }
-
-    .contact {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
+    /* CONTATO */
+    .contact { background: #fff; padding: 60px 20px; border-radius: 20px; margin: 40px 0; text-align: center; }
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
     .social-links a {
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 30px;
-      color: white;
-      font-weight: 500;
-      transition: 0.3s;
+      text-decoration: none; padding: 12px 24px; border-radius: 8px;
+      color: white; font-weight: 600; transition: 0.2s; font-size: 0.9rem;
     }
+    .whatsapp { background: #16a34a; }
+    .instagram { background: #db2777; }
+    .google-review { background: #2563eb; }
+    .phone { background: #0ea5e9; }
+    .consulta-os { background: #f97316; }
+    .social-links a:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    .social-links a:hover {
-      opacity: 0.9;
-      transform: scale(1.05);
-    }
+    /* MAPA */
+    .map iframe { width: 100%; height: 350px; border: 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-    .whatsapp { background-color: #25D366; }
-    .instagram { background-color: #E4405F; }
-    .google-review { background-color: #4285F4; padding: 14px 40px; }
-    .phone { background-color: #34b7f1; }
-    .consulta-os { background-color: #FF5722; }
+    /* CARROSSEL PARCEIROS */
+    .clients { padding: 40px 0; overflow: hidden; background: #fff; margin-top: 40px; }
+    .clients-carousel { display: flex; gap: 40px; animation: scroll 30s linear infinite; width: max-content; }
+    .client-item { padding: 20px; display: flex; align-items: center; justify-content: center; }
+    .client-item img { height: 50px; filter: grayscale(100%); opacity: 0.5; transition: 0.3s; }
+    .client-item:hover img { filter: grayscale(0%); opacity: 1; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ESPAÇAMENTO EXTRA PARA LOCALIZAÇÃO */
-    .map {
-      margin-top: 80px;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 350px;
-      border: 0;
-      border-radius: 12px;
-      margin-top: 15px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #0077b6;
-      color: white;
-      font-size: 0.9em;
-    }
-
-/* CLIENTES E PARCEIROS */
-.clients {
-  margin-top: 40px;
-}
-
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 25px;
-  align-items: center;
-}
-
-.client-item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.client-item:hover {
-  transform: translateY(-5px);
-}
-
-.client-item img {
-  max-width: 120px;
-  max-height: 70px;
-  object-fit: contain;
-}
-/* CLIENTES - CARROSSEL */
-.clients {
-  margin-top: 40px;
-  overflow: hidden;
-}
-
-.clients-carousel {
-  display: flex;
-  gap: 30px;
-  animation: scrollClients 30s linear infinite;
-}
-
-.client-item {
-  min-width: 160px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.client-item img {
-  max-width: 130px;
-  max-height: 80px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  transition: 0.4s;
-}
-
-.client-item:hover img {
-  filter: grayscale(0%);
-}
-
-/* Pausa animação ao passar mouse */
-.clients:hover .clients-carousel {
-  animation-play-state: paused;
-}
-
-/* Animação do carrossel */
-@keyframes scrollClients {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+    footer { text-align: center; padding: 40px; background: var(--primary); color: white; margin-top: 60px; font-size: 0.85rem; }
+    footer span { color: var(--secondary); font-weight: bold; }
   </style>
 </head>
 
 <body>
 
-  <!-- MENU -->
   <nav class="navbar">
     <div class="nav-container">
       <span class="menu-toggle" onclick="toggleMenu()">☰</span>
       <ul id="menu">
-        <li><a href="#servicos">Nossos Serviços</a></li>
-        <li><a href="#contato">Entre em Contato</a></li>
-        <li><a href="#localizacao">Nossa Localização</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#localizacao">Localização</a></li>
         <li><a href="#avaliacoes">Avaliações</a></li>
         <li><a href="consulta-os/">Consulta OS</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HEADER -->
   <header>
-    <img src="images/pic00.png" alt="logo" width="30%">
+    <img src="images/pic00.png" alt="SupportTI Online">
   </header>
 
   <div class="container">
 
-    <!-- SERVIÇOS -->
     <section class="services" id="servicos">
-      <h2>Nossos Serviços</h2>
+      <h2 class="section-title">Nossos Serviços</h2>
       <div class="service-grid">
-
         <div class="service-item">
           <img src="images/technical-support.png">
           <h3>Atendimento ao Cliente</h3>
           <p>Serviço avulso ou contratual com resolução rápida e eficaz de problemas.</p>
         </div>
-
         <div class="service-item">
           <img src="images/customer-support.png">
           <h3>Suporte Técnico</h3>
           <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
         </div>
-
         <div class="service-item">
           <img src="images/network.png">
           <h3>Manutenção de Redes</h3>
           <p>Planejamento de redes de computadores, garantindo performance e segurança.</p>
         </div>
-
         <div class="service-item">
           <img src="images/maintenance.png">
           <h3>Manutenção de Equipamentos</h3>
           <p>Reparos especializados para notebook, computador e servidor.</p>
         </div>
-
         <div class="service-item">
           <img src="images/server.png">
           <h3>Gerenciamento de Servidores</h3>
           <p>Gestão eficiente de servidores, com foco em performance e segurança.</p>
         </div>
-
         <div class="service-item">
           <img src="images/wifi.png">
-          <h3>Soluções em Redes Wireless</h3>
+          <h3>Soluções Wireless</h3>
           <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
         </div>
-
         <div class="service-item">
           <img src="images/certificado-digital.png">
-          <h3>Certificado Digital A1 e A3</h3>
-          <p>Emissão para pessoa física e jurídica, com segurança e agilidade.</p>
+          <h3>Certificado Digital</h3>
+          <p>Emissão de Certificado A1 e A3 para pessoa física e jurídica.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- CONTATO -->
     <section class="contact" id="contato">
-      <h2>Entre em Contato</h2>
+      <h2 class="section-title">Entre em Contato</h2>
       <div class="social-links">
         <a class="whatsapp" href="https://wa.me/557536323105">WhatsApp</a>
         <a class="instagram" href="https://www.instagram.com/supporttionline/">Instagram</a>
-        <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review">Avalie no Google</a>
-        <a class="phone" href="tel:+557536323105">Ligue Agora</a>
-        <a class="consulta-os" href="consulta-os/">Consultar OS</a>
+        <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review">Avaliar no Google</a>
+        <a class="phone" href="tel:+557536323105">Ligar Agora</a>
+        <a class="consulta-os" href="consulta-os/">Consulta OS</a>
       </div>
     </section>
 
-   <!-- Mapa -->
-    <section class="map">
-	    <h2>Nossa Localização</h2>
-	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+    <section class="map" id="localizacao">
+      <h2 class="section-title">Nossa Localização</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
     </section>
-
-
   </div>
 
-  <!-- AVALIAÇÕES -->
-  <h2 class="reviews-title" id="avaliacoes">Avaliações dos Clientes</h2>
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-  <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
+  <section class="container" id="avaliacoes">
+    <h2 class="section-title">Avaliações</h2>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
+  </section>
 
-<!-- CLIENTES E PARCEIROS -->
-<section class="clients" id="clientes">
-  <h2 class="reviews-title">Parceiros Autorizados</h2>
-
-  <div class="clients-carousel">
-
-    <!-- <div class="client-item"><img src="images/audiconjur.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/cardoso-vita.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/churrascaria-pena-branca.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/crie-borde.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/hotel-pena-branca.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/clinica-idefi.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/fabio-braga.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/facemp.png"></div> -->
-    <!-- <div class="client-item"><img src="images/fbgames.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/fbnet.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/frigosaj.png"></div> -->
-    <!-- <div class="client-item"><img src="images/mr-contabilidade.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/prime-promotora.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/rogerio-auto-center.png"></div> -->
-	
-    <!-- DUPLICADO para loop infinito -->
-	<!-- <div class="client-item"><img src="clientes/audiconjur.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/cardoso-vita.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/churrascaria-pena-branca.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/crie-borde.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/hotel-pena-branca.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/clinica-idefi.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/fabio-braga.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/facemp.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/fbgames.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/fbnet.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/frigosaj.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/mr-contabilidade.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/prime-promotora.png"></div> -->
-    <!-- <div class="client-item"><img src="clientes/rogerio-auto-center.png"></div> -->
-	
-  </div>
-</section>
   <footer>
     <p>© 2026 SupportTI Tecnologia e Informação – Todos os direitos reservados</p>
-    <p>Seu IP: <span id="ip-address">Carregando...</span></p>
+    <p>Seu endereço IP: <span id="ip-address">...</span></p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
-    }
+    function toggleMenu() { document.getElementById("menu").classList.toggle("show"); }
 
     fetch('https://httpbin.org/ip')
       .then(r => r.json())
       .then(d => document.getElementById('ip-address').textContent = d.origin)
-      .catch(() => document.getElementById('ip-address').textContent = 'Erro');
+      .catch(() => document.getElementById('ip-address').textContent = 'Oculto');
   </script>
 
 </body>
 </html>
-
-
-
-
-
-
