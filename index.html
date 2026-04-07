@@ -59,7 +59,7 @@
     .nav-container {
       max-width: 1200px;
       margin: auto;
-      padding: 10px 20px; /* Reduzi padding do menu */
+      padding: 10px 20px;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -72,7 +72,7 @@
     .btn-suporte-nav {
       background-color: var(--secondary);
       color: white !important;
-      padding: 6px 15px; /* Botão mais fino */
+      padding: 6px 15px;
       border-radius: 5px;
       font-weight: 700 !important;
     }
@@ -90,19 +90,17 @@
       .navbar ul li { text-align: center; padding: 5px 0; }
     }
 
-    /* CONTAINER PRINCIPAL - Reduzi o padding de 40px para 10px */
     .container { max-width: 1100px; margin: auto; padding: 10px 20px; }
 
     .title-with-logo {
       display: flex;
       justify-content: center;
-      margin-bottom: 30px; /* Reduzi margem abaixo da logo */
+      margin-bottom: 30px;
       padding-top: 20px;
     }
 
     .title-logo-img { max-width: 250px; height: auto; }
 
-    /* TITULOS DE SEÇÃO - Margem reduzida de 40px para 20px */
     .section-title {
       text-align: center;
       font-size: 1.8rem;
@@ -115,7 +113,7 @@
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 15px; /* Grid mais compacto */
+      gap: 15px;
     }
 
     .service-item {
@@ -130,7 +128,7 @@
     .service-item h3 { margin-bottom: 8px; color: var(--primary); font-size: 1.1rem; }
     .service-item p { font-size: 0.9rem; color: #64748b; }
 
-    /* CONTATO - Reduzi margens de 40px para 15px */
+    /* CONTATO */
     .contact { background: #fff; padding: 30px 20px; border-radius: 20px; margin: 15px 0; text-align: center; }
     .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
     .social-links a {
@@ -146,7 +144,7 @@
     /* MAPA */
     .map iframe { width: 100%; height: 350px; border: 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-    /* RODAPÉ - Reduzi o padding de 50px para 30px */
+    /* RODAPÉ */
     footer { text-align: center; padding: 30px 20px; background: #0f172a; color: white; font-size: 0.85rem; }
   </style>
 </head>
@@ -159,7 +157,7 @@
       <ul id="menu">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#avaliacoes">Depoimentos</a></li>
         <li><a href="#localizacao">Localização</a></li>
         <li><a href="consulta-os/">Consulta OS</a></li>
         <li><a href="suporte.exe" class="btn-suporte-nav"><i class="fas fa-desktop"></i> Suporte Remoto</a></li>
@@ -169,53 +167,70 @@
 
   <div class="container">
 
-    <!-- SERVIÇOS -->
+    <!-- SERVIÇOS REORDENADOS -->
     <section class="services" id="servicos">
       <div class="title-with-logo">
         <img src="images/pic00.png" alt="SupportTI Logo" class="title-logo-img">
       </div>
 
       <div class="service-grid">
-        <div class="service-item">
-          <img src="images/technical-support.png">
-          <h3>Atendimento ao Cliente</h3>
-          <p>Serviço avulso ou contratual com resolução rápida e eficaz.</p>
-        </div>
+        
+        <!-- 1. Suporte Técnico -->
         <div class="service-item">
           <img src="images/customer-support.png">
           <h3>Suporte Técnico</h3>
-          <p>Manutenção imediata ou com agendamento presencial.</p>
+          <p>Atendimento especializado com resolução rápida e eficaz de problemas.</p>
         </div>
-        <div class="service-item">
-          <img src="images/network.png">
-          <h3>Manutenção de Redes</h3>
-          <p>Planejamento e segurança para redes de computadores.</p>
-        </div>
+
+        <!-- 2. Equipamentos -->
         <div class="service-item">
           <img src="images/maintenance.png">
           <h3>Equipamentos</h3>
           <p>Reparos especializados para notebook, computador e servidor.</p>
         </div>
+
+        <!-- 3. Manutenção de Redes -->
         <div class="service-item">
-          <img src="images/server.png">
-          <h3>Gerenciamento de Servidores</h3>
-          <p>Gestão eficiente com foco em performance e segurança.</p>
+          <img src="images/network.png">
+          <h3>Manutenção de Redes</h3>
+          <p>Planejamento e segurança para redes de computadores cabeadas.</p>
         </div>
+
+        <!-- 4. Soluções Wireless -->
         <div class="service-item">
           <img src="images/wifi.png">
           <h3>Soluções Wireless</h3>
-          <p>Otimização de redes sem fio residenciais e empresariais.</p>
+          <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
         </div>
+
+        <!-- 5. Gerenciamento de Servidores -->
         <div class="service-item">
-          <img src="images/certificado-digital.png">
-          <h3>Certificado Digital</h3>
-          <p>Emissão de Certificado A1 e A3 para PF e PJ.</p>
+          <img src="images/server.png">
+          <h3>Gerenciamento de Servidores</h3>
+          <p>Gestão eficiente com foco em performance, backup e segurança.</p>
         </div>
+
+        <!-- 6. Suporte Field Service -->
         <div class="service-item">
           <img src="images/partnership.png">
           <h3>Suporte Field Service</h3>
-          <p>Serviços técnicos para empresas parceiras (Padrão contratante).</p>
+          <p>Prestação de serviços técnicos para empresas parceiras (Padrão contratante).</p>
         </div>
+
+        <!-- 7. Certificado Digital -->
+        <div class="service-item">
+          <img src="images/certificado-digital.png">
+          <h3>Certificado Digital</h3>
+          <p>Emissão de Certificado A1 e A3 para pessoa física e jurídica.</p>
+        </div>
+
+        <!-- 8. Atendimento ao Cliente -->
+        <div class="service-item">
+          <img src="images/technical-support.png">
+          <h3>Atendimento ao Cliente</h3>
+          <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
+        </div>
+
       </div>
     </section>
 
@@ -231,14 +246,14 @@
       </div>
     </section>
 
-    <!-- AVALIAÇÕES - Padding de 40px reduzido para 5px -->
+    <!-- AVALIAÇÕES -->
     <section id="avaliacoes" style="padding: 5px 0;">
       <h2 class="section-title">Avaliações</h2>
       <script src="https://static.elfsight.com/platform/platform.js" async></script>
       <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
     </section>
 
-    <!-- MAPA - Padding de 40px reduzido para 10px -->
+    <!-- MAPA -->
     <section class="map" id="localizacao" style="padding: 10px 0;">
       <h2 class="section-title">Nossa Localização</h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
