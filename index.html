@@ -4,24 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- TÍTULO QUE APARECE NO GOOGLE -->
   <title>SupportTI | Assistência Técnica em Santo Antônio de Jesus - BA</title>
-
-  <!-- DESCRIÇÃO QUE APARECE NO GOOGLE -->
-  <meta name="description" content="Conserto de notebooks, PCs e redes em Santo Antônio de Jesus - BA. Suporte técnico especializado para empresas e certificado digital. Ligue: (75) 3632-3105.">
-
-  <!-- PALAVRAS-CHAVE -->
-  <meta name="keywords" content="assistência técnica informática, conserto de notebook, Santo Antônio de Jesus, suporte ti, manutenção de computadores bahia, formatar pc saj">
+  <meta name="description" content="Conserto de notebooks, PCs e redes em Santo Antônio de Jesus - BA. Suporte técnico especializado para empresas e certificado digital.">
+  <meta name="keywords" content="assistência técnica informática, conserto de notebook, Santo Antônio de Jesus, suporte ti, manutenção de computadores bahia">
   <meta name="author" content="SupportTI Online">
 
-  <!-- LINK PARA O SEU ICONE -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-  <!-- FONTES PROFISSIONAIS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- DADOS ESTRUTURADOS -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,7 +59,7 @@
     .nav-container {
       max-width: 1200px;
       margin: auto;
-      padding: 12px 20px;
+      padding: 10px 20px; /* Reduzi padding do menu */
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -81,10 +72,9 @@
     .btn-suporte-nav {
       background-color: var(--secondary);
       color: white !important;
-      padding: 8px 18px;
+      padding: 6px 15px; /* Botão mais fino */
       border-radius: 5px;
       font-weight: 700 !important;
-      transition: 0.3s;
     }
 
     .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
@@ -92,65 +82,60 @@
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
       .navbar ul {
-        position: absolute; top: 60px; right: 0; width: 100%;
+        position: absolute; top: 50px; right: 0; width: 100%;
         background: white; flex-direction: column; display: none;
-        padding: 20px; border-bottom: 1px solid #eee;
+        padding: 15px 0; border-bottom: 1px solid #eee;
       }
       .navbar ul.show { display: flex; }
-      .navbar ul li { text-align: center; }
+      .navbar ul li { text-align: center; padding: 5px 0; }
     }
 
-    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+    /* CONTAINER PRINCIPAL - Reduzi o padding de 40px para 10px */
+    .container { max-width: 1100px; margin: auto; padding: 10px 20px; }
 
-    /* LOGO CENTRALIZADO NO TOPO DOS SERVIÇOS */
     .title-with-logo {
       display: flex;
       justify-content: center;
-      margin-bottom: 50px;
+      margin-bottom: 30px; /* Reduzi margem abaixo da logo */
       padding-top: 20px;
     }
 
-    .title-logo-img {
-      max-width: 300px; /* Tamanho da logo maior para dar destaque */
-      height: auto;
+    .title-logo-img { max-width: 250px; height: auto; }
+
+    /* TITULOS DE SEÇÃO - Margem reduzida de 40px para 20px */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     /* GRID DE SERVIÇOS */
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
+      gap: 15px; /* Grid mais compacto */
     }
 
     .service-item {
       background: var(--card-bg);
       border-radius: 12px;
-      padding: 30px;
+      padding: 25px;
       text-align: center;
       border: 1px solid #eef2f6;
-      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
-    .service-item:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: var(--secondary); }
-    .service-item img { width: 50px; height: 50px; margin-bottom: 20px; }
-    .service-item h3 { margin-bottom: 10px; color: var(--primary); font-size: 1.2rem; }
-    .service-item p { font-size: 0.95rem; color: #64748b; }
+    .service-item img { width: 45px; height: 45px; margin-bottom: 15px; }
+    .service-item h3 { margin-bottom: 8px; color: var(--primary); font-size: 1.1rem; }
+    .service-item p { font-size: 0.9rem; color: #64748b; }
 
-    /* TÍTULOS DE SEÇÃO */
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
-
-    /* CONTATO */
-    .contact { background: #fff; padding: 60px 20px; border-radius: 20px; margin: 40px 0; text-align: center; }
-    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
+    /* CONTATO - Reduzi margens de 40px para 15px */
+    .contact { background: #fff; padding: 30px 20px; border-radius: 20px; margin: 15px 0; text-align: center; }
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
     .social-links a {
-      text-decoration: none; padding: 12px 24px; border-radius: 8px;
-      color: white; font-weight: 600; transition: 0.2s; font-size: 0.9rem;
+      text-decoration: none; padding: 10px 20px; border-radius: 8px;
+      color: white; font-weight: 600; font-size: 0.85rem;
     }
     .whatsapp { background: #16a34a; }
     .instagram { background: #db2777; }
@@ -161,7 +146,8 @@
     /* MAPA */
     .map iframe { width: 100%; height: 350px; border: 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-    footer { text-align: center; padding: 50px 20px; background: #0f172a; color: white; font-size: 0.85rem; }
+    /* RODAPÉ - Reduzi o padding de 50px para 30px */
+    footer { text-align: center; padding: 30px 20px; background: #0f172a; color: white; font-size: 0.85rem; }
   </style>
 </head>
 
@@ -183,9 +169,8 @@
 
   <div class="container">
 
-    <!-- SEÇÃO DE SERVIÇOS (COM LOGO CENTRALIZADO) -->
+    <!-- SERVIÇOS -->
     <section class="services" id="servicos">
-      
       <div class="title-with-logo">
         <img src="images/pic00.png" alt="SupportTI Logo" class="title-logo-img">
       </div>
@@ -194,47 +179,47 @@
         <div class="service-item">
           <img src="images/technical-support.png">
           <h3>Atendimento ao Cliente</h3>
-          <p>Serviço avulso ou contratual com resolução rápida e eficaz de problemas.</p>
+          <p>Serviço avulso ou contratual com resolução rápida e eficaz.</p>
         </div>
         <div class="service-item">
           <img src="images/customer-support.png">
           <h3>Suporte Técnico</h3>
-          <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
+          <p>Manutenção imediata ou com agendamento presencial.</p>
         </div>
         <div class="service-item">
           <img src="images/network.png">
           <h3>Manutenção de Redes</h3>
-          <p>Planejamento de redes de computadores, garantindo performance e segurança.</p>
+          <p>Planejamento e segurança para redes de computadores.</p>
         </div>
         <div class="service-item">
           <img src="images/maintenance.png">
-          <h3>Manutenção de Equipamentos</h3>
+          <h3>Equipamentos</h3>
           <p>Reparos especializados para notebook, computador e servidor.</p>
         </div>
         <div class="service-item">
           <img src="images/server.png">
           <h3>Gerenciamento de Servidores</h3>
-          <p>Gestão eficiente de servidores, com foco em performance e segurança.</p>
+          <p>Gestão eficiente com foco em performance e segurança.</p>
         </div>
         <div class="service-item">
           <img src="images/wifi.png">
           <h3>Soluções Wireless</h3>
-          <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
+          <p>Otimização de redes sem fio residenciais e empresariais.</p>
         </div>
         <div class="service-item">
           <img src="images/certificado-digital.png">
           <h3>Certificado Digital</h3>
-          <p>Emissão de Certificado A1 e A3 para pessoa física e jurídica.</p>
+          <p>Emissão de Certificado A1 e A3 para PF e PJ.</p>
         </div>
         <div class="service-item">
           <img src="images/partnership.png">
           <h3>Suporte Field Service</h3>
-          <p>Prestação de serviços técnicos para empresas parceiras alinhado aos padrões da contratante.</p>
+          <p>Serviços técnicos para empresas parceiras (Padrão contratante).</p>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO DE CONTATO -->
+    <!-- CONTATO -->
     <section class="contact" id="contato">
       <h2 class="section-title">Entre em Contato</h2>
       <div class="social-links">
@@ -246,29 +231,30 @@
       </div>
     </section>
 
-    <!-- AVALIAÇÕES (AGORA ACIMA DO MAPA) -->
-    <section id="avaliacoes" style="padding: 40px 0;">
+    <!-- AVALIAÇÕES - Padding de 40px reduzido para 5px -->
+    <section id="avaliacoes" style="padding: 5px 0;">
       <h2 class="section-title">Avaliações</h2>
       <script src="https://static.elfsight.com/platform/platform.js" async></script>
       <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
     </section>
 
-    <!-- MAPA (AGORA NO FINAL DA PÁGINA) -->
-    <section class="map" id="localizacao" style="padding: 40px 0;">
+    <!-- MAPA - Padding de 40px reduzido para 10px -->
+    <section class="map" id="localizacao" style="padding: 10px 0;">
       <h2 class="section-title">Nossa Localização</h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
   </div>
 
-  <footer style="text-align: center; padding: 50px 20px; background: #0f172a; color: white;">
+  <!-- RODAPÉ -->
+  <footer style="text-align: center; padding: 30px 20px; background: #0f172a; color: white;">
     <div style="max-width: 600px; margin: auto;">
-      <h3 style="color: #0284c7; margin-bottom: 10px; font-size: 1.3rem;">SupportTI Tecnologia</h3>
-      <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.5;">
-        Soluções inteligentes em informática em Santo Antônio de Jesus - BA.
+      <h3 style="color: #0284c7; margin-bottom: 5px; font-size: 1.3rem;">SupportTI Tecnologia</h3>
+      <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.4;">
+        Soluções inteligentes em informática e redes em Santo Antônio de Jesus - BA.
       </p>
-      <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.5;">
-        🔢 + 6.000 clientes atendidos 🔧 + 17.000 serviços efetuados 🛡 + 10 anos de mercado.
+      <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; font-size: 0.75rem; opacity: 0.5;">
+        🔢 + 6.000 clientes atendidos 🔧 + 17.000 serviços efetuados em 🗓 13 anos de mercado.
       </div>
     </div>
   </footer>
