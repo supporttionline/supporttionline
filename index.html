@@ -4,14 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- TÍTULO QUE APARECE NO GOOGLE -->
   <title>SupportTI | Assistência Técnica em Santo Antônio de Jesus - BA</title>
+
+  <!-- DESCRIÇÃO QUE APARECE NO GOOGLE -->
   <meta name="description" content="Conserto de notebooks, PCs e redes em Santo Antônio de Jesus - BA. Suporte técnico especializado para empresas e certificado digital. Ligue: (75) 3632-3105.">
+
+  <!-- PALAVRAS-CHAVE -->
   <meta name="keywords" content="assistência técnica informática, conserto de notebook, Santo Antônio de Jesus, suporte ti, manutenção de computadores bahia, formatar pc saj">
   <meta name="author" content="SupportTI Online">
+
+  <!-- LINK PARA O SEU ICONE -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- FONTES PROFISSIONAIS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- DADOS ESTRUTURADOS -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,29 +100,19 @@
       .navbar ul li { text-align: center; }
     }
 
-    /* REMOVI O HEADER ANTIGO E AJUSTEI O CONTAINER */
-    .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-    /* NOVO ESTILO DO TÍTULO COM LOGO LADO A LADO */
+    /* LOGO CENTRALIZADO NO TOPO DOS SERVIÇOS */
     .title-with-logo {
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 15px; /* Espaço entre a logo e o texto */
       margin-bottom: 50px;
-      flex-wrap: wrap; /* Para não quebrar em telas pequenas */
+      padding-top: 20px;
     }
 
     .title-logo-img {
-      height: 50px; /* Tamanho ajustado para acompanhar o texto */
-      width: auto;
-    }
-
-    .section-title-custom {
-      font-size: 2rem;
-      color: var(--primary);
-      font-weight: 700;
-      margin: 0; /* Remove margens padrão */
+      max-width: 300px; /* Tamanho da logo maior para dar destaque */
+      height: auto;
     }
 
     /* GRID DE SERVIÇOS */
@@ -135,6 +135,15 @@
     .service-item img { width: 50px; height: 50px; margin-bottom: 20px; }
     .service-item h3 { margin-bottom: 10px; color: var(--primary); font-size: 1.2rem; }
     .service-item p { font-size: 0.95rem; color: #64748b; }
+
+    /* TÍTULOS DE SEÇÃO */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
 
     /* CONTATO */
     .contact { background: #fff; padding: 60px 20px; border-radius: 20px; margin: 40px 0; text-align: center; }
@@ -164,24 +173,21 @@
       <ul id="menu">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#localizacao">Localização</a></li>
         <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#localizacao">Localização</a></li>
         <li><a href="consulta-os/">Consulta OS</a></li>
         <li><a href="suporte.exe" class="btn-suporte-nav"><i class="fas fa-desktop"></i> Suporte Remoto</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- O HEADER ANTIGO FOI REMOVIDO DAQUI -->
-
   <div class="container">
 
+    <!-- SEÇÃO DE SERVIÇOS (COM LOGO CENTRALIZADO) -->
     <section class="services" id="servicos">
       
-      <!-- NOVA COMPOSIÇÃO: LOGO + TÍTULO LADO A LADO -->
       <div class="title-with-logo">
         <img src="images/pic00.png" alt="SupportTI Logo" class="title-logo-img">
-        <h2 class="section-title-custom">Nossos Serviços</h2>
       </div>
 
       <div class="service-grid">
@@ -228,8 +234,9 @@
       </div>
     </section>
 
+    <!-- SEÇÃO DE CONTATO -->
     <section class="contact" id="contato">
-      <h2 class="section-title" style="text-align: center; font-size: 2rem; color: var(--primary); margin-bottom: 40px; font-weight: 700;">Entre em Contato</h2>
+      <h2 class="section-title">Entre em Contato</h2>
       <div class="social-links">
         <a class="whatsapp" href="https://wa.me/557536323105">WhatsApp</a>
         <a class="instagram" href="https://www.instagram.com/supporttionline/">Instagram</a>
@@ -239,26 +246,29 @@
       </div>
     </section>
 
-    <section class="map" id="localizacao">
-      <h2 class="section-title" style="text-align: center; font-size: 2rem; color: var(--primary); margin-bottom: 40px; font-weight: 700;">Nossa Localização</h2>
+    <!-- AVALIAÇÕES (AGORA ACIMA DO MAPA) -->
+    <section id="avaliacoes" style="padding: 40px 0;">
+      <h2 class="section-title">Avaliações</h2>
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
+    </section>
+
+    <!-- MAPA (AGORA NO FINAL DA PÁGINA) -->
+    <section class="map" id="localizacao" style="padding: 40px 0;">
+      <h2 class="section-title">Nossa Localização</h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.734050640106!2d-39.263452425098166!3d-12.96872235975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e2a40d721cdaf%3A0xbb5f6aa9256a1864!2sSUPPORTTI%20Tecnologia%20e%20Informa%C3%A7%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1729778967055!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
     </section>
-  </div>
 
-  <section class="container" id="avaliacoes" style="padding-top: 0;">
-    <h2 class="section-title" style="text-align: center; font-size: 2rem; color: var(--primary); margin-bottom: 40px; font-weight: 700;">Avaliações</h2>
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
-    <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
-  </section>
+  </div>
 
   <footer style="text-align: center; padding: 50px 20px; background: #0f172a; color: white;">
     <div style="max-width: 600px; margin: auto;">
       <h3 style="color: #0284c7; margin-bottom: 10px; font-size: 1.3rem;">SupportTI Tecnologia</h3>
       <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.5;">
-        Soluções inteligentes em informática e redes em Santo Antônio de Jesus - BA.
+        Soluções inteligentes em informática em Santo Antônio de Jesus - BA.
       </p>
       <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.5;">
-        🔢 + 6.000 clientes atendidos 🔧 + 17.000 serviços efetuados em 🗓 13 anos de mercado.
+        🔢 + 6.000 clientes atendidos 🔧 + 17.000 serviços efetuados 🛡 + 10 anos de mercado.
       </div>
     </div>
   </footer>
