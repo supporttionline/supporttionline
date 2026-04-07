@@ -21,6 +21,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- DADOS ESTRUTURADOS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SupportTI Tecnologia e Informação",
+    "image": "https://www.supporttionline.com.br/images/pic00.png",
+    "@id": "https://www.supporttionline.com.br",
+    "url": "https://www.supporttionline.com.br",
+    "telephone": "+557536323105",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Saldanha Marinho, 17", 
+      "addressLocality": "Santo Antônio de Jesus",
+      "addressRegion": "BA",
+      "postalCode": "44430-130",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -12.9683, 
+      "longitude": -39.2608
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "12:00"
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --primary: #0f172a;
@@ -54,9 +94,16 @@
     }
 
     .navbar ul { list-style: none; display: flex; gap: 20px; align-items: center; }
-    .navbar a { color: var(--primary); text-decoration: none; font-weight: 500; font-size: 0.9em; transition: 0.3s; }
+    .navbar a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9em;
+      transition: 0.3s;
+    }
     .navbar a:hover { color: var(--secondary); }
 
+    /* ESTILO BOTÃO SUPORTE NO MENU (CHAMATIVO) */
     .btn-suporte-nav {
       background-color: var(--secondary);
       color: white !important;
@@ -65,7 +112,10 @@
       font-weight: 700 !important;
       transition: 0.3s;
     }
-    .btn-suporte-nav:hover { background-color: var(--primary); transform: scale(1.05); }
+    .btn-suporte-nav:hover {
+      background-color: var(--primary);
+      transform: scale(1.05);
+    }
 
     .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
 
@@ -78,6 +128,7 @@
       }
       .navbar ul.show { display: flex; }
       .navbar ul li { text-align: center; }
+      .btn-suporte-nav { display: inline-block; margin-top: 5px; }
     }
 
     /* HEADER */
@@ -127,30 +178,52 @@
     .google-review { background: #2563eb; }
     .phone { background: #0ea5e9; }
     .consulta-os { background: #f97316; }
+    .social-links a:hover { opacity: 0.9; transform: translateY(-2px); }
 
     /* MAPA */
     .map iframe { width: 100%; height: 350px; border: 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-    /* CARROSSEL DE MARCAS (NOVO) */
-    .brands-section { padding: 40px 0; background: #fff; overflow: hidden; margin-top: 20px; border-top: 1px solid #eee; }
-    .brands-carousel { display: flex; gap: 50px; animation: scrollBrands 35s linear infinite; width: max-content; align-items: center; }
-    .brand-name {
-      font-size: 1.4rem;
+    /* PARCEIROS */
+    .clients { padding: 40px 0; overflow: hidden; background: #fff; margin-top: 40px; }
+    .clients-carousel { display: flex; gap: 40px; animation: scroll 30s linear infinite; width: max-content; }
+    .client-item { padding: 20px; display: flex; align-items: center; justify-content: center; }
+    .client-item img { height: 50px; filter: grayscale(100%); opacity: 0.5; transition: 0.3s; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* BARRA DE MARCAS (SIMPLIFICADA) */
+    .brands-section { 
+      padding: 20px 0 0 0; 
+      background: #fff; 
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+    .brands-bar {
+      padding: 15px 0;
+      background: #f1f5f9; 
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .brands-carousel {
+      display: flex;
+      gap: 50px;
+      animation: scrollBrands 35s linear infinite;
+      width: max-content;
+    }
+    .brand-item {
+      font-size: 0.85rem;
       font-weight: 700;
       color: #94a3b8;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: 0.3s;
+      letter-spacing: 1px;
       white-space: nowrap;
-      user-select: none;
     }
-    .brand-name:hover { color: var(--secondary); }
     @keyframes scrollBrands {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
 
-    footer { text-align: center; padding: 50px 20px; background: #0f172a; color: white; margin-top: 60px; font-size: 0.85rem; }
+    footer { text-align: center; padding: 50px 20px; background: #0f172a; color: white; font-size: 0.85rem; }
   </style>
 </head>
 
@@ -165,6 +238,7 @@
         <li><a href="#localizacao">Localização</a></li>
         <li><a href="#avaliacoes">Avaliações</a></li>
         <li><a href="consulta-os/">Consulta OS</a></li>
+        <!-- BOTÃO SUPORTE NO MENU -->
         <li><a href="suporte.exe" class="btn-suporte-nav"><i class="fas fa-desktop"></i> Suporte Remoto</a></li>
       </ul>
     </div>
@@ -214,6 +288,7 @@
           <h3>Certificado Digital</h3>
           <p>Emissão de Certificado A1 e A3 para pessoa física e jurídica.</p>
         </div>
+        <!-- NOVO SERVIÇO ADICIONADO -->
         <div class="service-item">
           <img src="images/partnership.png">
           <h3>Suporte Field Service</h3>
@@ -245,36 +320,37 @@
     <div class="elfsight-app-c38e3242-6a40-428f-a83f-5df35c73fc01"></div>
   </section>
 
-  <!-- SEÇÃO DE MARCAS / ATENDIMENTO ESPECIALIZADO -->
+  <!-- SEÇÃO DE MARCAS (TEXTO ACIMA + BARRA DISCRETA) -->
   <section class="brands-section">
-    <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 30px;">Serviço Especializado</h2>
-    <div class="brands-carousel">
-      <!-- Marcas originais -->
-      <div class="brand-name">Acer</div>
-      <div class="brand-name">Asus</div>
-      <div class="brand-name">Apple</div>
-      <div class="brand-name">Dell</div>
-      <div class="brand-name">Hp</div>
-      <div class="brand-name">Lenovo</div>
-      <div class="brand-name">LG</div>
-      <div class="brand-name">Login</div>
-      <div class="brand-name">Positivo</div>
-      <div class="brand-name">Samsung</div>
-      <div class="brand-name">Sony</div>
-      <div class="brand-name">Vaio</div>
-      <!-- Cópia das marcas para o loop infinito sem pulos -->
-      <div class="brand-name">Acer</div>
-      <div class="brand-name">Asus</div>
-      <div class="brand-name">Apple</div>
-      <div class="brand-name">Dell</div>
-      <div class="brand-name">Hp</div>
-      <div class="brand-name">Lenovo</div>
-      <div class="brand-name">LG</div>
-      <div class="brand-name">Login</div>
-      <div class="brand-name">Positivo</div>
-      <div class="brand-name">Samsung</div>
-      <div class="brand-name">Sony</div>
-      <div class="brand-name">Vaio</div>
+    <h2 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Atendimento Especializado</h2>
+    <div class="brands-bar">
+      <div class="brands-carousel">
+        <div class="brand-item">Acer</div>
+        <div class="brand-item">Asus</div>
+        <div class="brand-item">Apple</div>
+        <div class="brand-item">Dell</div>
+        <div class="brand-item">Hp</div>
+        <div class="brand-item">Lenovo</div>
+        <div class="brand-item">LG</div>
+        <div class="brand-item">Login</div>
+        <div class="brand-item">Positivo</div>
+        <div class="brand-item">Samsung</div>
+        <div class="brand-item">Sony</div>
+        <div class="brand-item">Vaio</div>
+        <!-- Loop para animação contínua -->
+        <div class="brand-item">Acer</div>
+        <div class="brand-item">Asus</div>
+        <div class="brand-item">Apple</div>
+        <div class="brand-item">Dell</div>
+        <div class="brand-item">Hp</div>
+        <div class="brand-item">Lenovo</div>
+        <div class="brand-item">LG</div>
+        <div class="brand-item">Login</div>
+        <div class="brand-item">Positivo</div>
+        <div class="brand-item">Samsung</div>
+        <div class="brand-item">Sony</div>
+        <div class="brand-item">Vaio</div>
+      </div>
     </div>
   </section>
 
