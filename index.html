@@ -45,7 +45,15 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    
+    /* Ajuste para o conteúdo não ficar escondido atrás da barra fixa */
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: var(--bg); 
+      color: var(--text); 
+      line-height: 1.6; 
+      padding-bottom: 140px; 
+    }
 
     /* MENU */
     .navbar {
@@ -163,12 +171,49 @@
     
     .social-links a:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    /* WHATSAPP FLUTUANTE */
+    /* MAPA */
+    .map iframe { width: 100%; height: 350px; border: 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+    /* RODAPÉ FIXO (IGUAL À IMAGEM) */
+    .footer-fixo {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      z-index: 2000; /* Garante que fique acima de tudo */
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+    }
+
+    .footer-fixo h3 { 
+      color: #0284c7; 
+      margin-bottom: 5px; 
+      font-size: 1.2rem; 
+      margin-top: 0;
+    }
+
+    .footer-fixo p { 
+      font-size: 0.85rem; 
+      opacity: 0.9; 
+      margin-bottom: 10px;
+    }
+
+    .footer-fixo .stats-bar {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 10px;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    /* WHATSAPP FLUTUANTE AJUSTADO */
     .whatsapp-float {
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 20px;
+      bottom: 140px; /* Subi para não ficar atrás da barra fixa */
       right: 20px;
       background-color: var(--whatsapp);
       color: #FFF;
@@ -176,23 +221,15 @@
       text-align: center;
       font-size: 30px;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 1000;
+      z-index: 2001;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       transition: 0.3s;
     }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #1eb954;
-    }
+    .whatsapp-float:hover { transform: scale(1.1); background-color: #1eb954; }
 
-    /* MAPA */
-    .map iframe { width: 100%; height: 350px; border: 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-
-    /* RODAPÉ - Padding superior reduzido para 10px */
-    footer { text-align: center; padding: 10px 20px 30px; background: #0f172a; color: white; font-size: 0.85rem; }
   </style>
 </head>
 
@@ -213,52 +250,21 @@
 
   <div class="container">
 
+    <!-- SERVIÇOS -->
     <section class="services" id="servicos">
       <div class="title-with-logo">
         <img src="images/pic00.png" alt="SupportTI Logo" class="title-logo-img">
       </div>
 
       <div class="service-grid">
-        <div class="service-item">
-          <img src="images/customer-support.png">
-          <h3>Suporte Técnico</h3>
-          <p>Atendimento especializado com resolução rápida e eficaz de problemas.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/maintenance.png">
-          <h3>Equipamentos</h3>
-          <p>Reparos especializados para notebook, computador e servidor.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/network.png">
-          <h3>Manutenção de Redes</h3>
-          <p>Planejamento e segurança para redes de computadores cabeadas.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/wifi.png">
-          <h3>Soluções Wireless</h3>
-          <p>Configuração e otimização de redes sem fio residenciais e empresariais.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/server.png">
-          <h3>Gerenciamento de Servidores</h3>
-          <p>Gestão eficiente com foco em performance, backup e segurança.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/partnership.png">
-          <h3>Suporte Field Service</h3>
-          <p>Prestação de serviços técnicos para empresas parceiras (Padrão contratante).</p>
-        </div>
-        <div class="service-item">
-          <img src="images/certificado-digital.png">
-          <h3>Certificado Digital</h3>
-          <p>Emissão de Certificado A1 e A3 para pessoa física e jurídica.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/technical-support.png">
-          <h3>Atendimento ao Cliente</h3>
-          <p>Manutenção imediata ou com agendamento, conforme sua necessidade.</p>
-        </div>
+        <div class="service-item"><img src="images/customer-support.png"><h3>Suporte Técnico</h3><p>Atendimento especializado com resolução rápida.</p></div>
+        <div class="service-item"><img src="images/maintenance.png"><h3>Equipamentos</h3><p>Reparos em notebooks, computadores e servidores.</p></div>
+        <div class="service-item"><img src="images/network.png"><h3>Manutenção de Redes</h3><p>Planejamento e segurança para redes.</p></div>
+        <div class="service-item"><img src="images/wifi.png"><h3>Soluções Wireless</h3><p>Otimização de redes sem fio empresariais.</p></div>
+        <div class="service-item"><img src="images/server.png"><h3>Gerenciamento de Servidores</h3><p>Gestão com foco em performance e backup.</p></div>
+        <div class="service-item"><img src="images/partnership.png"><h3>Suporte Field Service</h3><p>Serviços para empresas parceiras (Padrão contratante).</p></div>
+        <div class="service-item"><img src="images/certificado-digital.png"><h3>Certificado Digital</h3><p>Emissão de A1 e A3 para PF e PJ com agilidade.</p></div>
+        <div class="service-item"><img src="images/technical-support.png"><h3>Atendimento ao Cliente</h3><p>Manutenção conforme sua necessidade.</p></div>
       </div>
     </section>
 
@@ -266,18 +272,10 @@
     <section class="contact" id="contato">
       <h2 class="section-title">Entre em Contato</h2>
       <div class="social-links">
-        <a class="instagram" href="https://www.instagram.com/supporttionline/" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review" target="_blank">
-          <i class="fas fa-star"></i> Avaliar
-        </a>
-        <a class="phone" href="tel:+557536323105">
-          <i class="fas fa-phone"></i> Ligar
-        </a>
-        <a class="consulta-os" href="consulta-os/">
-          <i class="fas fa-file-invoice"></i> Consulta OS
-        </a>
+        <a class="instagram" href="https://www.instagram.com/supporttionline/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a class="google-review" href="https://g.page/r/CWQYaiWpal-7EBM/review" target="_blank"><i class="fas fa-star"></i> Avaliar</a>
+        <a class="phone" href="tel:+557536323105"><i class="fas fa-phone"></i> Ligar</a>
+        <a class="consulta-os" href="consulta-os/"><i class="fas fa-file-invoice"></i> Consulta OS</a>
       </div>
     </section>
 
@@ -296,20 +294,19 @@
 
   </div>
 
-  <!-- RODAPÉ - Removido margem superior do H3 para colar no topo -->
-  <footer style="text-align: center; padding: 10px 20px 30px; background: #0f172a; color: white;">
-    <div style="max-width: 600px; margin: auto;">
-      <h3 style="color: #0284c7; margin-bottom: 5px; font-size: 1.3rem; margin-top: 0;">SupportTI Tecnologia</h3>
-      <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.4;">
-        Soluções inteligentes em informática em Santo Antônio de Jesus - BA.
-      </p>
-      <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; font-size: 0.75rem; opacity: 0.5;">
-        👥 + 6.000 clientes atendidos 🔧 + 17.000 serviços efetuados 🗓️ + 10 anos de mercado.
+  <!-- RODAPÉ AZUL FIXO NO RODAPÉ DA TELA -->
+  <footer class="footer-fixo">
+    <div style="max-width: 800px; margin: auto;">
+      <h3>SupportTI Tecnologia</h3>
+      <p>Soluções inteligentes em informática em Santo Antônio de Jesus - BA.</p>
+      
+      <div class="stats-bar">
+        👥 + 6.000 clientes atendidos &nbsp;&nbsp; 🔧 + 17.000 serviços efetuados &nbsp;&nbsp; 🗓️ + 13 anos de mercado.
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLUTUANTE -->
+  <!-- WHATSAPP FLUTUANTE (ACIMA DA BARRA FIXA) -->
   <a href="https://wa.me/557536323105" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
